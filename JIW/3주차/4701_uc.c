@@ -51,8 +51,8 @@ void quick_sort(int list[], int left, int right){
     }
 }
 
-int check(int arr, int i, int j){
-
+int check(int *arr, int i, int j){
+    
 }
 int main(void){
     int n, i, j, min, temp;

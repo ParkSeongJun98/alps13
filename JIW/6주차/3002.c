@@ -149,9 +149,9 @@ int main(void){
     for(i=0;i<m;i++){
         scanf("%d", &questions[i]);
     }
-    
+
     for(i=0;i<m;i++){
-        printf("%d", find(1, n, questions[i]));
+        printf("%d ", find(1, n, questions[i]));
     }
 
     return 0;

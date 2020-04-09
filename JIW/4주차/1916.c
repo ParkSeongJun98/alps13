@@ -1,3 +1,4 @@
+//clear!
 #include <stdio.h>
 
 

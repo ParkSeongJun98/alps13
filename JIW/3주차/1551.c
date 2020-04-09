@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+//clear!
+
 int n, d[100010], k;
 
 
@@ -9,9 +11,12 @@ int f(int k){
     int i;
     int output = -1;
     for(i=1;i<=n;i++){
-
+        if(d[i] == k){
+            output = i;
+            break;
+        }
     }
-    return 0;
+    return output;
 }
 int main()
 {

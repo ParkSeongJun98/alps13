@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 struct Schedule{
     char name[100];
@@ -8,15 +7,37 @@ struct Schedule{
     int day;
 };
 
+void SWAP(struct Schedule *arr, int a, int b){
+    struct Schedule temp;
+    temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+int stringComp(char a[], char b[]){
+    int i = 0;
+    while(a[i] != 0 && b[i] != 0){
+        if(a[i] != b[i]){
+            break;
+        }
+        i++;
+    }
+    
+    if(a[i] > b[i]){
+        return 1;
+    }
+
+    return 0;
+}
 void sort(struct Schedule *arr, int n){
     int i, j;
     struct Schedule temp;
+
+    // 이름 -> 일 -> 월 -> 년 순으로 정렬
     for(i=n;i>0;i--){
         for(j=0;j<i-1;j++){
-            if(strcmp(arr[j].name,arr[j+1].name)==1){
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+            if(stringComp(arr[j].name,arr[j+1].name)){
+                SWAP(arr, j, j+1);
             }
         }
     }
@@ -24,9 +45,7 @@ void sort(struct Schedule *arr, int n){
     for(i=n;i>0;i--){
         for(j=0;j<i-1;j++){
             if(arr[j].day > arr[j+1].day){
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                SWAP(arr, j, j+1);
             }
         }
     }
@@ -34,9 +53,7 @@ void sort(struct Schedule *arr, int n){
     for(i=n;i>0;i--){
         for(j=0;j<i-1;j++){
             if(arr[j].month > arr[j+1].month){
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                SWAP(arr, j, j+1);
             }
         }
     }
@@ -44,9 +61,7 @@ void sort(struct Schedule *arr, int n){
     for(i=n;i>0;i--){
         for(j=0;j<i-1;j++){
             if(arr[j].year > arr[j+1].year){
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                SWAP(arr, j, j+1);
             }
         }
     }

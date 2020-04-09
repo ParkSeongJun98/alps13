@@ -12,6 +12,7 @@ int main(void){
         printf("1");
         return 0;
     }
+
     for(i=2;i<=n;i++){
         arr[1][i] = i-1;
     }
@@ -23,8 +24,10 @@ int main(void){
             arr[i][j] = arr[i][j-1] + arr[i-1][j-2];
         }
     }
-
-    
+    j=1;
+    for(i=0;i<k;i++){
+        
+    }
     printf("%d", arr[k][n]);
     return 0;
 }
