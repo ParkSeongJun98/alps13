@@ -27,7 +27,7 @@ int main(void) {
 	{
 		cin >> code >> num >> name;
 		//입력 코드 처리
-		if (code =='I')
+		if (code == 'I')
 		{
 			//번호 찾기
 			for (int j = 0; j <= count; j++)
@@ -71,10 +71,10 @@ int main(void) {
 				if (num == numList[j])
 				{
 					//앞으로 당겨오기
-					for (int k = j; k < count-1; k++)
+					for (int k = j; k < count - 1; k++)
 					{
 						numList[j] = numList[j + 1];
-						nameList[j] = nameList[j + 1];						
+						nameList[j] = nameList[j + 1];
 					}
 					count--;
 					break;
